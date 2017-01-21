@@ -1,6 +1,7 @@
 
 import os
 from book import Book
+import time
 
 DATA_DIR = 'data'
 BOOKS_FILE_NAME = os.path.join(DATA_DIR, 'wishlist.txt')
@@ -44,7 +45,7 @@ def shutdown():
     try:
         os.mkdir(DATA_DIR)
     except FileExistsError:
-        pass # Ignore - if directory exists, don't need to do anything. 
+        pass # Ignore - if directory exists, don't need to do anything.
 
     with open(BOOKS_FILE_NAME, 'w') as f:
         f.write(output_data)
@@ -91,6 +92,7 @@ def set_read(book_id, read):
 
         if book.id == book_id:
             book.read = True
+            book.dateRead = time.strftime("%x")
             return True
 
     return False # return False if book id is not found
@@ -118,7 +120,7 @@ def make_output_data():
     output_data = []
 
     for book in book_list:
-        output = [ book.title, book.author, str(book.read), str(book.id) ]
+        output = [ book.title, book.author, str(book.read), str(book.dateRead) str(book.id) ]
         output_str = separator.join(output)
         output_data.append(output_str)
 
