@@ -6,12 +6,12 @@ class Book:
 
     NO_ID = -1
 
-    def __init__(self, title, author, read=False, dateRead, id=NO_ID):
+    def __init__(self, title, author,read=False, dateRead="not read", id=NO_ID):
         '''Default book is unread, and has no ID'''
         self.title = title
         self.author = author
-        self.read = read
         self.dateRead = dateRead # attribute for the date book was marked as read.
+        self.read = read
         self.id=id
 
 
@@ -33,4 +33,4 @@ class Book:
 
 
     def __eq__(self, other):
-        return self.title == other.title and self.author == other.author and self.read == other.read and self.id==other.id
+        return self.title == other.title and self.author == other.author and self.read == other.read and self.dateRead == other.dateRead and self.id==other.id

@@ -1,1 +1,3 @@
-Fremulon^^^me^^^False^^^1
+testing^^^brendon^^^True^^^01/21/17^^^1
+sherlock holmes^^^sir arthur conan doyle^^^False^^^^^^2
+Grimm's Fairytales^^^The Brothers Grimm^^^True^^^01/21/17^^^3
