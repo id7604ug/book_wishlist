@@ -70,7 +70,11 @@ def get_books(**kwargs):
         read_books = [ book for book in book_list if book.read == kwargs['read'] ]
         return read_books
 
+    if 'title' in kwargs:
 
+        search_results = [ book for book in book_list if book.title == kwargs['title'] ]
+
+        return search_results
 
 def add_book(book):
     ''' Add to db, set id value, return Book'''

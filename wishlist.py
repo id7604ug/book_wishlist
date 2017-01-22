@@ -18,6 +18,9 @@ def handle_choice(choice):
     elif choice == '4':
         new_book()
 
+    elif choice == '5':
+        show_search()
+
     elif choice == 'q':
         quit()
 
@@ -35,6 +38,15 @@ def show_read():
     '''Fetch and show all read books'''
     read = datastore.get_books(read=True)
     ui.show_list(read)
+
+def show_search(): # Searchs the database for a User entered title.
+    ''' Fetch and show all books based on User search '''
+
+    search = ui.search_for_book
+
+    book = datastore.get_books(title=search)
+    ui.show_list(book)
+    
 
 
 def book_read():

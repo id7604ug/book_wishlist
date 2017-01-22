@@ -10,6 +10,7 @@ def display_menu_get_choice():
         2. Show books that have been read
         3. Mark a book as read
         4. Add book to wishlist
+        5. Search database for book
         q. Quit
     ''')
 
@@ -58,3 +59,16 @@ def get_new_book_info():
 def message(msg):
     '''Display a message to the user'''
     print(msg)
+
+def search_for_book():
+
+    while True:
+
+        entry = input("Please enter FULL title of the book you want to search for: ")
+
+        if entry == "":
+            
+            print("Please enter a title.")
+
+        else:
+            return entry
