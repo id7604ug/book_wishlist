@@ -1,1 +1,3 @@
-David Copperfield^^^Charles Dickens^^^False^^^not read^^^1
+Atlas Shrugged^^^Ayn Rand^^^False^^^not read^^^2
+David Copperfield^^^Charles Dickens^^^True^^^01/21/17^^^1
+the road^^^cormic mccarthy^^^True^^^01/21/17^^^3

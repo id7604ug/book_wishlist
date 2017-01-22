@@ -2,6 +2,7 @@
 import os
 from book import Book
 import time
+import operator
 
 DATA_DIR = 'data'
 BOOKS_FILE_NAME = os.path.join(DATA_DIR, 'wishlist.txt')
@@ -60,6 +61,7 @@ def get_books(**kwargs):
 
     global book_list
 
+    sort_book_list()
 
     if len(kwargs) == 0:
         return book_list
@@ -77,6 +79,7 @@ def add_book(book):
 
     book.id = generate_id()
     book_list.append(book)
+    sort_book_list() # sorts books to keep them in proper order.
 
 
 def generate_id():
@@ -130,13 +133,11 @@ def make_output_data():
 
     return all_books_string
 
-def sort_book_list():
+
+def sort_book_list(): # Sorts book_list alphabetically
 
     global book_list
 
-    book_list.sort(key=lambda x: x.title, reverse=True)
-
-    print(book_list)
-
+    book_list.sort(key=operator.attrgetter("title"), reverse=False) # learned abour operator from StackSocial.
 
     return book_list
