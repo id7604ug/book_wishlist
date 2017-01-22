@@ -21,6 +21,7 @@ def setup():
         with open(BOOKS_FILE_NAME) as f:
             data = f.read()
             make_book_list(data)
+            sort_book_list()
     except FileNotFoundError:
         # First time program has run. Assume no books.
         pass
@@ -128,3 +129,14 @@ def make_output_data():
     all_books_string = '\n'.join(output_data)
 
     return all_books_string
+
+def sort_book_list():
+
+    global book_list
+
+    book_list.sort(key=lambda x: x.title, reverse=True)
+
+    print(book_list)
+
+
+    return book_list
