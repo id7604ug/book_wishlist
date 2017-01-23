@@ -1,4 +1,5 @@
 from book import Book
+import string
 
 
 def display_menu_get_choice():
@@ -53,6 +54,7 @@ def get_new_book_info():
 
     title = input('Enter title: ')
     author = input('Enter author: ')
+
     return Book(title, author)
 
 
