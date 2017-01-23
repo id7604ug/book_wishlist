@@ -43,10 +43,9 @@ def show_search(): # Searchs the database for a User entered title.
     ''' Fetch and show all books based on User search '''
 
     search = ui.search_for_book
+    #book = datastore.get_books(title=search)
+    #ui.show_list(book)
 
-    book = datastore.get_books(title=search)
-    ui.show_list(book)
-    
 
 
 def book_read():

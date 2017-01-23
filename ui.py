@@ -62,13 +62,11 @@ def message(msg):
 
 def search_for_book():
 
-    while True:
+    entry = input("Please enter FULL title of the book you want to search for: ")
 
-        entry = input("Please enter FULL title of the book you want to search for: ")
+    if entry == "":
 
-        if entry == "":
-            
-            print("Please enter a title.")
+        print("Please enter a title.")
 
-        else:
-            return entry
+    else:
+        return entry
