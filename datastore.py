@@ -66,7 +66,7 @@ def get_books(**kwargs):
     if len(kwargs) == 0:
         return book_list
 
-    if 'read' in kwargs:
+    if 'read' in kwargs: 
         read_books = [ book for book in book_list if book.read == kwargs['read'] ]
         return read_books
 
@@ -78,7 +78,7 @@ def get_books(**kwargs):
 
     if 'author' in kwargs:
 
-        search_results = [ book for book in book_list if book.title == kwargs['author'] ]
+        search_results = [ book for book in book_list if book.author == kwargs['author'] ]
 
         return search_results
 

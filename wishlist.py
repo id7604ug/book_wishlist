@@ -46,11 +46,27 @@ def show_search(): # Searchs the database for a User entered title.
     ''' Fetch and show all books based on User search '''
 
     search = ui.search_for_book()
-    print(search)
 
-    #TODO add in verification for title and author.
-    book = datastore.get_books(title=search)
-    ui.show_list(book)
+    search_key = ""
+    search_value = ""
+
+    for key in search.keys(): # loops over dictionary and assigns the key and value
+        for value in search.values():
+
+            search_key = key
+            search_value = value
+            
+
+    if search_key == "title":
+
+        book = datastore.get_books(title=search_value) # returns search list for title
+        ui.show_list(book)
+
+    if search_key == "author":
+
+        book = datastore.get_books(author=search_value) # returns search list for author
+        ui.show_list(book)
+
 
 def delete_book_by_author():
     """Get the choice from user and delete the book"""
