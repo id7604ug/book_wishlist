@@ -60,13 +60,39 @@ def message(msg):
     '''Display a message to the user'''
     print(msg)
 
-def search_for_book():
+def search_for_book(): # asks the User for the title of the book to search for.
 
-    entry = input("Please enter FULL title of the book you want to search for: ")
+    query = ""
+    entry_return = {}
+
+    while True:
+
+        question = input("Do you wish to search by title or author? ")
+
+        if question.lower() == "title":
+            query = "title"
+            break
+
+        if question.lower() == "author":
+            query = "author"
+            break
+
+        else:
+            print("That is not a valid entry, try again.")
+
+    if query == "title":
+
+        entry = input("Please enter the FULL title of the book you want to search for: ")
+        entry_return.update( { "title" : entry } )
+
+    if query == "author":
+
+        entry = input("Please enter FULL name of the author you want to search for: ")
+        entry_return.update( { "author" : entry } )
 
     if entry == "":
 
         print("Please enter a title.")
 
-    else:
-        return entry
+
+    return entry_return

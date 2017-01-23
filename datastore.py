@@ -76,6 +76,12 @@ def get_books(**kwargs):
 
         return search_results
 
+    if 'author' in kwargs:
+
+        search_results = [ book for book in book_list if book.title == kwargs['author'] ]
+
+        return search_results
+
 def add_book(book):
     ''' Add to db, set id value, return Book'''
 
