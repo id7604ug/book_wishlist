@@ -11,6 +11,7 @@ def display_menu_get_choice():
         3. Mark a book as read
         4. Add book to wishlist
         5. Search database for book
+        6. Delete book by author name:
         q. Quit
     ''')
 
@@ -46,6 +47,11 @@ def ask_for_book_id():
         except ValueError:
             print('Please enter an integer number')
 
+
+def ask_for_authorname():
+    """Ask the user for the author name of a specific book you want to delete"""
+    author_name = input("Please enter the author name of the book: ")
+    return author_name
 
 def get_new_book_info():
 

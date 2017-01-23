@@ -21,6 +21,9 @@ def handle_choice(choice):
     elif choice == '5':
         show_search()
 
+    elif choice == '6':
+        delete_book_by_author()
+
     elif choice == 'q':
         quit()
 
@@ -49,6 +52,10 @@ def show_search(): # Searchs the database for a User entered title.
     book = datastore.get_books(title=search)
     ui.show_list(book)
 
+def delete_book_by_author():
+    """Get the choice from user and delete the book"""
+    author_name = ui.ask_for_authorname()
+    datastore.delete_book(author_name)
 
 
 def book_read():
