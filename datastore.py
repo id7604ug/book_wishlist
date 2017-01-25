@@ -114,6 +114,14 @@ def find_book_by_author(author_name):
         else:
             return None
 
+def edit_author(book_title): # Method to edit the author of the book
+    global book_list
+    for i in range(len(book_list)):
+        if book_title == book_list[i].title:
+            book_exists = book_list[i]
+            return book_exists
+        else:
+            return None
 
 def generate_id():
     global counter

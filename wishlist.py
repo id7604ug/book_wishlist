@@ -24,6 +24,11 @@ def handle_choice(choice):
     elif choice == '6':
         delete_book_by_author()
 
+    elif choice == '7': # Edit book title
+        edit_book_title()
+        
+    elif choice == '8' # Edit book author
+
     elif choice == 'q':
         quit()
 
@@ -55,7 +60,7 @@ def show_search(): # Searchs the database for a User entered title.
 
             search_key = key
             search_value = value
-            
+
 
     if search_key == "title":
 
