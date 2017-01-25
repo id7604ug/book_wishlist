@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 David Copperfield^^^Charles Dickens^^^True^^^01/21/17^^^1
 Grimms Fairytales^^^The Brothers Grimm^^^False^^^not read^^^5
 the hobbit^^^JRR tolkien^^^False^^^not read^^^4
 the road^^^cormic mccarthy^^^True^^^01/21/17^^^3
+=======
+Atlas Shruggedd^^^Ayn Rand^^^False^^^not read^^^2
+Atlas Shruggedd^^^Charles Dickens^^^True^^^01/21/17^^^1
+Atlas Shruggedd^^^The Brothers Grimm^^^False^^^not read^^^5
+Atlas Shruggedd^^^JRR tolkien^^^False^^^not read^^^4
+Atlas Shruggedd^^^cormic mccarthy^^^True^^^01/21/17^^^3
+>>>>>>> 75c62952c6278f4038d9f837ecf14656bb07d355
