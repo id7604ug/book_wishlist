@@ -2,6 +2,7 @@
 
 import ui, datastore
 from book import Book
+import input_output
 
 
 def handle_choice(choice):
@@ -92,13 +93,13 @@ def new_book():
 
 def quit():
     '''Perform shutdown tasks'''
-    datastore.shutdown()
+    input_output.shutdown()
     ui.message('Bye!')
 
 
 def main():
 
-    datastore.setup()
+    input_output.setup()
 
     quit = 'q'
     choice = None

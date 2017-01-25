@@ -2,6 +2,7 @@
 import os
 from book import Book
 import time
+
 import operator
 
 DATA_DIR = 'data'
@@ -12,48 +13,6 @@ separator = '^^^'  # a string probably not in any valid data relating to a book
 
 book_list = []
 counter = 0
-
-def setup():
-    ''' Read book info from file, if file exists. '''
-
-    global counter
-
-    try :
-        with open(BOOKS_FILE_NAME) as f:
-            data = f.read()
-            make_book_list(data)
-            sort_book_list()
-    except FileNotFoundError:
-        # First time program has run. Assume no books.
-        pass
-
-
-    try:
-        with open(COUNTER_FILE_NAME) as f:
-            try:
-                counter = int(f.read())
-            except:
-                counter = 0
-    except:
-        counter = len(book_list)
-
-
-def shutdown():
-    '''Save all data to a file - one for books, one for the current counter value, for persistent storage'''
-
-    output_data = make_output_data()
-
-    # Create data directory
-    try:
-        os.mkdir(DATA_DIR)
-    except FileExistsError:
-        pass # Ignore - if directory exists, don't need to do anything.
-
-    with open(BOOKS_FILE_NAME, 'w') as f:
-        f.write(output_data)
-
-    with open(COUNTER_FILE_NAME, 'w') as f:
-        f.write(str(counter))
 
 
 def get_books(**kwargs):
@@ -99,6 +58,7 @@ def delete_book(author_name):
     if book_exist is not None:
         book_index = book_list.index(book_exist)
         book_deleted = book_list.pop(book_index)
+        print(str(book_deleted).replace(" ", "^^^"))
         print("{} has been successfully deleted".format(book_deleted))
     else:
         print("{} is not in our database".format(author_name))
@@ -108,11 +68,12 @@ def find_book_by_author(author_name):
     """Search for the author in the booklist, if author is found, return the author. Otherwise, return None"""
     global book_list
     for i in range(len(book_list)):
-        if author_name == book_list[i].author:
+        if author_name.lower() == str(book_list[i].author).lower():
             author_exist = book_list[i]
             return author_exist
-        else:
-            return None
+    else:
+
+        return None
 
 
 def generate_id():
@@ -136,8 +97,8 @@ def set_read(book_id, read):
     return False # return False if book id is not found
 
 
-
 def make_book_list(string_from_file):
+
     ''' turn the string from the file into a list of Book objects'''
 
     global book_list
