@@ -1,18 +1,25 @@
 import os
-from book import Book
-import time
 import datastore
-
-import operator
 
 DATA_DIR = 'data'
 BOOKS_FILE_NAME = os.path.join(DATA_DIR, 'wishlist.txt')
 COUNTER_FILE_NAME = os.path.join(DATA_DIR, 'counter.txt')
 
 separator = '^^^'  # a string probably not in any valid data relating to a book
-
-
 counter = 0
+
+
+def delete_file_data(data_to_delete):
+    with open(BOOKS_FILE_NAME, 'r') as book_data:
+        lines = book_data.readlines()
+
+
+    with open(BOOKS_FILE_NAME, 'w') as book_data:
+        for line in lines:
+            if line.replace("^^^", " ") != data_to_delete:
+
+                book_data.write(line)
+
 
 def setup():
     ''' Read book info from file, if file exists. '''
