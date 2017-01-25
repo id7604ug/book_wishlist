@@ -26,7 +26,7 @@ def get_books(**kwargs):
     if len(kwargs) == 0:
         return book_list
 
-    if 'read' in kwargs: 
+    if 'read' in kwargs:
         read_books = [ book for book in book_list if book.read == kwargs['read'] ]
         return read_books
 
@@ -77,6 +77,33 @@ def find_book_by_author(book_title):
 
         return None
 
+def edit_author(book_title, new_author): # Method to edit the author of the book
+    global book_list
+    book_exists = False
+    book_not_found = True
+    for i in range(len(book_list)):
+        if book_title == book_list[i].title:
+            book_exists = True
+            book_not_found = False
+        if book_exists:
+            book_list[i].set_author(new_author)
+            book_exists = False
+        elif i == (len(book_list) - 1) & book_found:
+            print("This author does not exist in your collection.")
+
+def edit_title(book_author, new_title): # Method to edit the book title
+    global book_list
+    author_exists = False
+    author_not_found = True
+    for i in range(len(book_list)):
+        if book_author == book_list[i].author:
+            author_exists = True
+            author_not_found = False
+        if author_exists:
+            book_list[i].set_title(new_title)
+            author_exists = False
+        elif i == (len(book_list) - 1) & author_found:
+            print("This book does not exist in your collection.")
 
 def generate_id():
     global counter

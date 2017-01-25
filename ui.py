@@ -13,6 +13,8 @@ def display_menu_get_choice():
         4. Add book to wishlist
         5. Search database for book
         6. Delete book by author name:
+        7. Edit book title by author
+        8. Edit book author by title
         q. Quit
     ''')
 
@@ -49,10 +51,28 @@ def ask_for_book_id():
             print('Please enter an integer number')
 
 
+<<<<<<< HEAD
 def ask_for_book_title():
     """Ask the user for the author name of a specific book you want to delete"""
     author_name = input("Please enter the author name of the book: ")
+=======
+def ask_for_authorname():
+    """Ask the user for the author name of a specific book you want to delete/update"""
+    author_name = input("Please enter the author of the book: ")
+>>>>>>> 9f603440e55ac4c3c1279bbb3c9cec9e806ae957
     return author_name
+
+def ask_for_booktitle(): # Method to get book title
+    book_title = input("Please enter the title of the book: ")
+    return book_title
+
+def ask_for_new_author(): # Method to get new author name
+    new_author = input("Please enter the new author of the book: ")
+    return new_author
+
+def ask_for_new_title():
+    new_title = input("Please enter the new title of the book: ")
+    return new_title
 
 def get_new_book_info():
 

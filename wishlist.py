@@ -25,6 +25,12 @@ def handle_choice(choice):
     elif choice == '6':
         delet_book_by_title()
 
+    elif choice == '7': # Edit book title
+        edit_title_by_author()
+
+    elif choice == '8': # Edit book author
+        edit_author_by_title()
+
     elif choice == 'q':
         quit()
 
@@ -56,7 +62,7 @@ def show_search(): # Searchs the database for a User entered title.
 
             search_key = key
             search_value = value
-            
+
 
     if search_key == "title":
 
@@ -74,6 +80,15 @@ def delet_book_by_title():
     book_title = ui.ask_for_book_title()
     datastore.delete_book(book_title)
 
+def edit_author_by_title(): # Edit the author by book title
+    book_title = ui.ask_for_booktitle()
+    new_author = ui.ask_for_new_author()
+    datastore.edit_author(book_title, new_author)
+
+def edit_title_by_author(): # Method to edit the title by author
+    author = ui.ask_for_authorname()
+    new_title = ui.ask_for_new_title()
+    datastore.edit_title(author, new_title)
 
 def book_read():
     ''' Get choice from user, edit datastore, display success/error'''
@@ -107,6 +122,7 @@ def main():
     while choice != quit:
         choice = ui.display_menu_get_choice()
         handle_choice(choice)
+
 
 
 if __name__ == '__main__':

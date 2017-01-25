@@ -34,3 +34,9 @@ class Book:
 
     def __eq__(self, other):
         return self.title == other.title and self.author == other.author and self.read == other.read and self.dateRead == other.dateRead and self.id==other.id
+
+    def set_author(self, new_author_name): # Method to change the authors name
+        self.author = new_author_name
+
+    def set_title(self, new_title): # Method to change the books title
+        self.title = new_title
