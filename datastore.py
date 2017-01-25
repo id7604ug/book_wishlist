@@ -114,25 +114,27 @@ def find_book_by_author(author_name):
         else:
             return None
 
-def edit_author(book_title): # Method to edit the author of the book
+def edit_author(book_title, new_author): # Method to edit the author of the book
     global book_list
+    author_exists = False
     for i in range(len(book_list)):
         if book_title == book_list[i].title:
             book_exists = True
         if book_exists:
-            print("The current author is: " + book_list[i].author)
-            new_author = input("What would you like to change the author to? ")
             book_list[i].set_author(new_author)
-        else:
-            print("This author doesn't exist in your libraruy")
+        elif i == (len(book_list) - 1):
+            print("This author does not exist in your collection.")
 
-def edit_book_title(book_author): # Method to edit the book title
+def edit_title(book_author, new_title): # Method to edit the book title
     global book_list
+    author_exists = False
     for i in range(len(book_list)):
         if book_author == book_list[i].author:
             author_exists = True
         if author_exists:
-
+            book_list[i].set_title(new_title)
+        elif i == (len(book_list) - 1):
+            print("This book does not exist in your collection.")
 
 def generate_id():
     global counter

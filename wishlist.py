@@ -25,9 +25,10 @@ def handle_choice(choice):
         delete_book_by_author()
 
     elif choice == '7': # Edit book title
-        edit_book_title()
-        
-    elif choice == '8' # Edit book author
+        edit_title_by_author()
+
+    elif choice == '8': # Edit book author
+        edit_author_by_title()
 
     elif choice == 'q':
         quit()
@@ -78,6 +79,15 @@ def delete_book_by_author():
     author_name = ui.ask_for_authorname()
     datastore.delete_book(author_name)
 
+def edit_author_by_title(): # Edit the author by book title
+    book_title = ui.ask_for_booktitle()
+    new_author = ui.ask_for_new_author()
+    datastore.edit_author(book_title, new_author)
+
+def edit_title_by_author(): # Method to edit the title by author
+    author = ui.ask_for_authorname()
+    new_title = ui.ask_for_new_title()
+    datastore.edit_title(author, new_title)
 
 def book_read():
     ''' Get choice from user, edit datastore, display success/error'''
@@ -111,6 +121,7 @@ def main():
     while choice != quit:
         choice = ui.display_menu_get_choice()
         handle_choice(choice)
+
 
 
 if __name__ == '__main__':
