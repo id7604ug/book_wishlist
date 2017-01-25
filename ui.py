@@ -49,7 +49,7 @@ def ask_for_book_id():
             print('Please enter an integer number')
 
 
-def ask_for_authorname():
+def ask_for_book_title():
     """Ask the user for the author name of a specific book you want to delete"""
     author_name = input("Please enter the author name of the book: ")
     return author_name

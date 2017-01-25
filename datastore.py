@@ -2,6 +2,7 @@
 import os
 from book import Book
 import time
+import input_output
 
 import operator
 
@@ -64,11 +65,12 @@ def delete_book(author_name):
         print("{} is not in our database".format(author_name))
 
 
-def find_book_by_author(author_name):
+def find_book_by_author(book_title):
     """Search for the author in the booklist, if author is found, return the author. Otherwise, return None"""
     global book_list
     for i in range(len(book_list)):
-        if author_name.lower() == str(book_list[i].author).lower():
+        if book_title.lower() == str(book_list[i].title).lower():
+            input_output.delete_file_data(str(book_list[i].title))
             author_exist = book_list[i]
             return author_exist
     else:
