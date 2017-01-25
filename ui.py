@@ -13,8 +13,8 @@ def display_menu_get_choice():
         4. Add book to wishlist
         5. Search database for book
         6. Delete book by author name:
-        7. Edit book author by title
-        8. Edit book title by author
+        7. Edit book title by author
+        8. Edit book author by title
         q. Quit
     ''')
 
