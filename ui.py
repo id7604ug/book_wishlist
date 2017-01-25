@@ -51,15 +51,9 @@ def ask_for_book_id():
             print('Please enter an integer number')
 
 
-<<<<<<< HEAD
-def ask_for_book_title():
-    """Ask the user for the author name of a specific book you want to delete"""
-    author_name = input("Please enter the author name of the book: ")
-=======
 def ask_for_authorname():
     """Ask the user for the author name of a specific book you want to delete/update"""
     author_name = input("Please enter the author of the book: ")
->>>>>>> 9f603440e55ac4c3c1279bbb3c9cec9e806ae957
     return author_name
 
 def ask_for_booktitle(): # Method to get book title
