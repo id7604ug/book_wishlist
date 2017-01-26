@@ -131,11 +131,12 @@ def make_book_list(string_from_file):
     books_str = string_from_file.split('\n')
     # print(books_str) # Debugging
     for book_str in books_str:
-        # print(book_str) # Debugging
-        data = book_str.split(separator)
-        # print(data) # Debugging
-        book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]))
-        book_list.append(book)
+        if (len(book_str) >=  5):
+            # print(book_str) # Debugging
+            data = book_str.split(separator)
+            # print(data) # Debugging
+            book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]))
+            book_list.append(book)
 
 
 def make_output_data():
