@@ -77,7 +77,7 @@ def show_search(): # Searchs the database for a User entered title.
 
 def delet_book_by_title():
     """Get the choice from user and delete the book"""
-    book_title = ui.ask_for_book_title()
+    book_title = ui.ask_for_booktitle()
     datastore.delete_book(book_title)
 
 def edit_author_by_title(): # Edit the author by book title

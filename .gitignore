@@ -4,8 +4,9 @@ __pycache__/book.cpython-36.pyc
 __pycache__/datastore.cpython-36.pyc
 __pycache__/input_output.cpython-36.pyc
 __pycache__/ui.cpython-36.pyc
-<<<<<<< HEAD
 .pyc
-=======
 wishlist.txt
->>>>>>> 277f919d1b2aaac74eea30c21a91570704e3d88e
+
+*.pyc 
+__pyc__  
+__pyc__  
