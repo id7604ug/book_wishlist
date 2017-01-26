@@ -41,17 +41,29 @@ def get_books(**kwargs):
 
 
 def add_book(book):
-    ''' Add to db, set id value, return Book '''
+    ''' Add to db, set id value, return Book, If the book has been by the user, the user
+     is being alerted that they have read the book '''
     global book_list
+    read_book = get_books(read=True)
+    book_author = str(book.author)
+    print(book_author)
 
-    for books in book_list:
-         print(book.read)
-         if books.author == book.author and book.read == 'yes':
-            print("you have already read this book")
-    else:
-        book.id = generate_id()
-        book_list.append(book)
-        sort_book_list() # sorts books to keep them in proper order.
+    for books in range(len(read_book)):
+        if read_book[0].author == book_author:
+            print("You have already read this book")
+            print(read_book[0])
+
+            answer = input("Do you want to read this book again or read a different edition(Please enter Y)")
+            if answer.lower() == 'y':
+                book.id = generate_id()
+                book_list.append(book)
+                sort_book_list()  # sorts books to keep them in proper order.
+                break
+
+        else:
+            book.id = generate_id()
+            book_list.append(book)
+            sort_book_list()  # sorts books to keep them in proper order.
 
 
 def delete_book(author_name):

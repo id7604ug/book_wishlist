@@ -19,6 +19,12 @@ class Book:
     def set_id(self, id):
         self.id = id
 
+    def is_book_read(self):
+        if self.read:
+            return True
+        else:
+            return False
+
 
     def __str__(self):
         read_str = 'no'
