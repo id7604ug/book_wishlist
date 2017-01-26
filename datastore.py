@@ -46,7 +46,6 @@ def add_book(book):
     global book_list
     read_book = get_books(read=True)
     book_author = str(book.author)
-    print(book_author)
 
     for books in range(len(read_book)):
         if read_book[0].author == book_author:
