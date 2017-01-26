@@ -3,10 +3,11 @@ import os
 from book import Book
 import time
 import input_output
+import json
 
 import operator
 
-separator = '^^^'  # a string probably not in any valid data relating to a book
+separator = '\n'  # a string probably not in any valid data relating to a book
 
 book_list = []
 counter = 0
@@ -123,21 +124,23 @@ def set_read(book_id, read, rating=0):
     return False # return False if book id is not found
 
 
-def make_book_list(string_from_file):
+def make_book_list(json_data):
 
     ''' turn the string from the file into a list of Book objects'''
 
     global book_list
+    book_dictionaries = json_data
+    book_data = []
+    for book in book_dictionaries:
+        single_book = []
+        for value in book.values():
+            single_book.append(value)
+        book_data.append(single_book)
 
-    books_str = string_from_file.split('\n')
-    # print(books_str) # Debugging
-    for book_str in books_str:
-        if (len(book_str) >=  5):
-            # print(book_str) # Debugging
-            data = book_str.split(separator)
-            # print(data) # Debugging
-            book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]), int(data[5]))
-            book_list.append(book)
+    for data in book_data:
+        # print(data) # Debugging
+        book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]), int(data[5]))
+        book_list.append(book)
 
 
 def make_output_data():
@@ -148,13 +151,12 @@ def make_output_data():
     output_data = []
 
     for book in book_list:
-        output = [ book.title, book.author,str(book.read), str(book.dateRead), str(book.id), str(book.rating) ]
-        output_str = separator.join(output)
-        output_data.append(output_str)
+        output = book.get_dictionary_formatted()
+        output_data.append(output)
 
-    all_books_string = '\n'.join(output_data)
+    # all_books_string = '\n'.join(output_data)
 
-    return all_books_string
+    return output_data
 
 
 def sort_book_list(): # Sorts book_list alphabetically

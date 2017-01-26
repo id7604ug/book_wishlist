@@ -1,5 +1,6 @@
 import os
 import datastore
+import json
 
 DATA_DIR = 'data'
 BOOKS_FILE_NAME = os.path.join(DATA_DIR, 'wishlist.txt')
@@ -26,11 +27,10 @@ def setup():
     ''' Read book info from file, if file exists. '''
 
     global counter
-
+    data_list = []
     try :
         with open(BOOKS_FILE_NAME) as f:
-            data = f.read()
-            datastore.make_book_list(data)
+            datastore.make_book_list(json.load(f))
             book_sorted = datastore.sort_book_list()
     except FileNotFoundError:
         # First time program has run. Assume no books.
@@ -51,7 +51,7 @@ def shutdown():
     '''Save all data to a file - one for books, one for the current counter value, for persistent storage'''
 
     output_data = datastore.make_output_data()
-
+    print(json.dumps(output_data))
     # Create data directory
     try:
         os.mkdir(DATA_DIR)
@@ -59,7 +59,7 @@ def shutdown():
         pass # Ignore - if directory exists, don't need to do anything.
 
     with open(BOOKS_FILE_NAME, 'w') as f:
-        f.write(output_data)
+        json.dump(output_data, f)
 
     with open(COUNTER_FILE_NAME, 'w') as f:
         f.write(str(counter))

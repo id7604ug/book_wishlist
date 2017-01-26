@@ -41,3 +41,6 @@ class Book:
 
     def set_title(self, new_title): # Method to change the books title
         self.title = new_title
+
+    def get_dictionary_formatted(self): # Method to return all book data as a dictionary
+        return {"Title": self.title,"Author": self.author, "Read": str(self.read), "Date Read": str(self.dateRead), "ID": str(self.id), "Rating": str(self.rating)}
