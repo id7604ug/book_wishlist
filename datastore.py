@@ -100,7 +100,7 @@ def delete_book(author_name):
         print("{} is not in our database".format(author_name))
 
 
-def find_book_by_author(book_title):
+def find_book_by_title(book_title):
     """Search for the title in the booklist, if author is found, return the author. Otherwise, return None"""
     global book_list
     for i in range(len(book_list)):

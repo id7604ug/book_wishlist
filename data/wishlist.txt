@@ -1,1 +1,1 @@
-[{"Title": "Great Expectations", "Author": "Charles Dickens", "Read": "False", "Date Read": "not read", "ID": "2", "Rating": "0"}, {"Title": "The Golden Compass", "Author": "Phillip Pullman", "Read": "True", "Date Read": "01/26/17", "ID": "1", "Rating": "4"}]
+[{"Title": "Great Expectations", "Author": "Charles Dickens", "Read": "False", "Date Read": "not read", "ID": "2", "Rating": "0"}, {"Title": "The Golden Compass", "Author": "Phillip Pullman", "Read": "True", "Date Read": "01/26/17", "ID": "3", "Rating": "4"}]
