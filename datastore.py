@@ -84,7 +84,7 @@ def add_book(new_book):
     if add_book_anyway: # Just add the book if no duplicate found
         new_book.id = generate_id()
         book_list.append(new_book)
-        sort_book_list() # sorts books to keep them in proper order.        
+        sort_book_list() # sorts books to keep them in proper order.
 
 def delete_book(author_name):
     """Find the book by the title so that we can be able to delete the book from the wishlist"""

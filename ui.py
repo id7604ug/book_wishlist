@@ -12,9 +12,9 @@ def display_menu_get_choice():
         3. Mark a book as read
         4. Add book to wishlist
         5. Search database for book
-        6. Delete book by author name:
-        7. Edit book title by author
-        8. Edit book author by title
+        6. Delete book by TITLE:
+        7. Edit book TITLE by author
+        8. Edit book AUTHOR by title
         q. Quit
     ''')
 
