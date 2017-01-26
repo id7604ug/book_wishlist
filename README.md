@@ -37,8 +37,14 @@ Unread books search result:
  
 Search whole database for book title:
  
-        Do you wish to search by title or author? title
-        Please enter the FULL title of the book you want to search for: The Grapes of Wrath
+    Do you wish to search by title or author? title
+    Please enter the FULL title of the book you want to search for: The Grapes of Wrath
+        
+Edit Author of book by title:
+
+    Please enter the title of the book: David Copperfield
+    Please enter the new author of the book: Ann Rice
+
 
 # Setup
 
