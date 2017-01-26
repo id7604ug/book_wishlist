@@ -82,7 +82,7 @@ def get_book_rating(): # Method that updates a books rating
     while (True): # Validation
         rating = input("After reading how would you rate it? (1-5) ")
         if rating.isdigit():
-            if int(rating) <= 5 & int(rating) >= 1:
+            if int(rating) <= 5 and int(rating) >= 1:
                 break
     return int(rating)
 
