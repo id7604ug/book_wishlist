@@ -43,9 +43,15 @@ def get_books(**kwargs):
 def add_book(book):
     ''' Add to db, set id value, return Book '''
     global book_list
-    book.id = generate_id()
-    book_list.append(book)
-    sort_book_list() # sorts books to keep them in proper order.
+
+    for books in book_list:
+         print(book.read)
+         if books.author == book.author and book.read == 'yes':
+            print("you have already read this book")
+    else:
+        book.id = generate_id()
+        book_list.append(book)
+        sort_book_list() # sorts books to keep them in proper order.
 
 
 def delete_book(author_name):
