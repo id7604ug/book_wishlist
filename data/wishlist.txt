@@ -1,1 +1,0 @@
-[{"Title": "Book2", "Author": "Anthony", "Read": "False", "Date Read": "not read", "ID": "2", "Rating": "0"}, {"Title": "t", "Author": "3", "Read": "True", "Date Read": "01/25/17", "ID": "1", "Rating": "5"}]

@@ -49,10 +49,10 @@ def add_book(book):
 
 
 def delete_book(author_name):
-    """Find the book by the author name so that we can be able to delete the book from the wishlist"""
+    """Find the book by the title so that we can be able to delete the book from the wishlist"""
 
     global book_list
-    book_exist = find_book_by_author(author_name)
+    book_exist = find_book_by_title(author_name)
     if book_exist is not None:
         book_index = book_list.index(book_exist)
         book_deleted = book_list.pop(book_index)
@@ -62,8 +62,8 @@ def delete_book(author_name):
         print("{} is not in our database".format(author_name))
 
 
-def find_book_by_author(book_title):
-    """Search for the author in the booklist, if author is found, return the author. Otherwise, return None"""
+def find_book_by_title(book_title):
+    """Search for the title in the booklist, if author is found, return the author. Otherwise, return None"""
     global book_list
     for i in range(len(book_list)):
         if book_title.lower() == str(book_list[i].title).lower():
