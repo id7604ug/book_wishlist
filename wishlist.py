@@ -94,6 +94,8 @@ def book_read():
     ''' Get choice from user, edit datastore, display success/error'''
     book_id = ui.ask_for_book_id()
     if datastore.set_read(book_id, True):
+        rating = ui.get_book_rating()
+        datastore.set_read(book_id, True, rating)
         ui.message('Successfully updated')
     else:
         ui.message('Book id not found in database')

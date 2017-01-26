@@ -1,9 +1,10 @@
-Atlas Shrugged^^^Ayn Rand^^^False^^^not read^^^2
-Atlas Shruggedd^^^Charles Dickens^^^True^^^01/21/17^^^1
-Atlas Shruggedd^^^cormic mccarthy^^^True^^^01/21/17^^^3
-David Copperfield^^^Charles Dickens^^^True^^^01/21/17^^^1
-Grimms Fairytales^^^The Brothers Grimm^^^False^^^not read^^^5
-Grimms Fairytales^^^The Brothers Grimm^^^False^^^not read^^^5
-the hobbit^^^JRR tolkien^^^False^^^not read^^^4
-the hobbit^^^JRR tolkien^^^False^^^not read^^^4
-the road^^^cormic mccarthy^^^True^^^01/21/17^^^3
+Atlas Shrugged^^^Ayn Rand^^^True^^^01/25/17^^^2^^^0
+Atlas Shruggedd^^^Charles Dickens^^^True^^^01/21/17^^^1^^^0
+Atlas Shruggedd^^^cormic mccarthy^^^True^^^01/21/17^^^3^^^0
+David Copperfield^^^Charles Dickens^^^True^^^01/21/17^^^1^^^0
+Grimms Fairytales^^^The Brothers Grimm^^^True^^^01/25/17^^^5^^^0
+Grimms Fairytales^^^The Brothers Grimm^^^False^^^not read^^^6^^^0
+Hunger Games^^^Suzanne Collins^^^False^^^not read^^^1^^^0
+the hobbit^^^JRR tolkien^^^False^^^not read^^^7^^^0
+the hobbit^^^JRR tolkien^^^False^^^not read^^^4^^^0
+the road^^^cormic mccarthy^^^True^^^01/21/17^^^8^^^0

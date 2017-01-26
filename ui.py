@@ -77,6 +77,15 @@ def get_new_book_info():
 
     return Book(title, author)
 
+def get_book_rating(): # Method that updates a books rating
+    rating = 0
+    while (True): # Validation
+        rating = input("After reading how would you rate it? (1-5) ")
+        if rating.isdigit():
+            if int(rating) <= 5 & int(rating) >= 1:
+                break
+    return int(rating)
+
 
 def message(msg):
     '''Display a message to the user'''

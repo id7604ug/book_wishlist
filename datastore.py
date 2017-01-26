@@ -107,7 +107,7 @@ def generate_id():
     return counter
 
 
-def set_read(book_id, read):
+def set_read(book_id, read, rating=0):
     '''Update book with given book_id to read. Return True if book is found in DB and update is made, False otherwise.'''
 
     global book_list
@@ -117,6 +117,7 @@ def set_read(book_id, read):
         if book.id == book_id:
             book.read = True
             book.dateRead = time.strftime("%x")
+            book.rating = rating
             return True
 
     return False # return False if book id is not found
@@ -147,7 +148,7 @@ def make_output_data():
     output_data = []
 
     for book in book_list:
-        output = [ book.title, book.author,str(book.read), str(book.dateRead), str(book.id) ]
+        output = [ book.title, book.author,str(book.read), str(book.dateRead), str(book.id), str(book.rating) ]
         output_str = separator.join(output)
         output_data.append(output_str)
 
