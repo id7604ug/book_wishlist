@@ -136,7 +136,7 @@ def make_book_list(string_from_file):
             # print(book_str) # Debugging
             data = book_str.split(separator)
             # print(data) # Debugging
-            book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]))
+            book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]), int(data[5]))
             book_list.append(book)
 
 
@@ -164,3 +164,7 @@ def sort_book_list(): # Sorts book_list alphabetically
     book_list.sort(key=operator.attrgetter("title"), reverse=False) # learned abour operator from StackSocial.
 
     return book_list
+
+def set_counter(new_counter): # Sets the counter
+    global counter
+    counter = new_counter

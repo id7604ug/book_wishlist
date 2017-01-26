@@ -1,6 +1,9 @@
 Atlas Shrugged^^^Ayn Rand^^^True^^^01/25/17^^^2^^^0
 Atlas Shruggedd^^^Charles Dickens^^^True^^^01/25/17^^^1^^^2
 Atlas Shruggedd^^^cormic mccarthy^^^True^^^01/21/17^^^3^^^0
+Book^^^Author^^^False^^^not read^^^1^^^0
+Book2^^^Author2^^^False^^^not read^^^1^^^0
+Book3^^^Author3^^^True^^^01/25/17^^^5^^^4
 David Copperfield^^^Charles Dickens^^^True^^^01/21/17^^^1^^^0
 Grimms Fairytales^^^The Brothers Grimm^^^True^^^01/25/17^^^5^^^0
 Grimms Fairytales^^^The Brothers Grimm^^^False^^^not read^^^6^^^0

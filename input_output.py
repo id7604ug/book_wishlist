@@ -40,11 +40,11 @@ def setup():
     try:
         with open(COUNTER_FILE_NAME) as f:
             try:
-                counter = int(f.read())
+                datastore.set_counter(int(f.read()))
             except:
-                counter = 0
+                datastore.set_counter(0)
     except:
-        counter = len(book_sorted)
+        datastore.set_counter(len(book_sorted))
 
 
 def shutdown():
