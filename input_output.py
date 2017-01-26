@@ -62,4 +62,4 @@ def shutdown():
         json.dump(output_data, f)
 
     with open(COUNTER_FILE_NAME, 'w') as f:
-        f.write(str(counter))
+        f.write(str(datastore.get_counter()))
