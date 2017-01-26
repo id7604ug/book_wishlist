@@ -164,3 +164,7 @@ def sort_book_list(): # Sorts book_list alphabetically
     book_list.sort(key=operator.attrgetter("title"), reverse=False) # learned abour operator from StackSocial.
 
     return book_list
+
+def set_counter(new_counter): # Sets the counter
+    global counter
+    counter = new_counter
