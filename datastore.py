@@ -45,10 +45,10 @@ def add_book(book):
      is being alerted that they have read the book '''
     global book_list
     read_book = get_books(read=True)
-    book_author = str(book.author)
+    book_title = str(book.title)
 
     for books in range(len(read_book)):
-        if read_book[0].author == book_author:
+        if read_book[0].title == book_title:
             print("You have already read this book")
             print(read_book[0])
 
@@ -65,28 +65,28 @@ def add_book(book):
             sort_book_list()  # sorts books to keep them in proper order.
 
 
-def delete_book(author_name):
+def delete_book(book_title):
     """Find the book by the title so that we can be able to delete the book from the wishlist"""
 
     global book_list
-    book_exist = find_book_by_title(author_name)
+    book_exist = find_book_by_title(book_title)
     if book_exist is not None:
         book_index = book_list.index(book_exist)
         book_deleted = book_list.pop(book_index)
-        print(str(book_deleted).replace(" ", "^^^"))
+
         print("{} has been successfully deleted".format(book_deleted))
     else:
-        print("{} is not in our database".format(author_name))
+        print("{} is not in our database".format(book_title))
 
 
 def find_book_by_title(book_title):
-    """Search for the title in the booklist, if author is found, return the author. Otherwise, return None"""
+    """Search for the title in the booklist, if title is found, return the author. Otherwise, return None"""
     global book_list
     for i in range(len(book_list)):
         if book_title.lower() == str(book_list[i].title).lower():
-            input_output.delete_file_data(str(book_list[i].title))
-            author_exist = book_list[i]
-            return author_exist
+            input_output.delete_books_from_json(str(book_list[i].title))
+            book_title = book_list[i]
+            return book_title
     else:
 
         return None

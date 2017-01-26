@@ -3,24 +3,26 @@ import datastore
 import json
 
 DATA_DIR = 'data'
-BOOKS_FILE_NAME = os.path.join(DATA_DIR, 'wishlist.txt')
+BOOKS_FILE_NAME = os.path.join(DATA_DIR, 'wishlist.json')
 COUNTER_FILE_NAME = os.path.join(DATA_DIR, 'counter.txt')
 
 separator = '^^^'  # a string probably not in any valid data relating to a book
 counter = 0
 
 
-def delete_file_data(data_to_delete):
-    with open(BOOKS_FILE_NAME, 'r') as book_data:
-        lines = book_data.readlines()
 
+def delete_books_from_json(data_to_delete):
+    try:
+        load_json_file = json.load(open(BOOKS_FILE_NAME, 'r'))
+        for data_dictionary in load_json_file:
+            dictionary_keys = data_dictionary.keys()
+            if data_to_delete in dictionary_keys:
+                data_dictionary.pop(data_to_delete)
+            write_data_back_file = open(BOOKS_FILE_NAME, "w")
+            json.dump(data_dictionary, write_data_back_file)
+    except FileExistsError:
+        print("Error reading file")
 
-    with open(BOOKS_FILE_NAME, 'w') as book_data:
-        for line in lines:
-            if line.replace("^^^", " ") != data_to_delete:
-                pass
-            else:
-                book_data.write(line)
 
 
 def setup():
