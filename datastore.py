@@ -40,19 +40,51 @@ def get_books(**kwargs):
         return search_results
 
 
-def add_book(book):
+# def add_book(book):
+#     ''' Add to db, set id value, return Book, If the book has been by the user, the user
+#      is being alerted that they have read the book '''
+#     global book_list
+#     read_book = get_books(read=True)
+#     book_author = str(book.author)
+#
+#     for books in range(len(read_book)):
+#         if read_book[0].author == book_author:
+#             print("You have already read this book")
+#             print(read_book[0])
+#
+#             answer = input("Do you want to read this book again or read a different edition(Please enter Y)")
+#             if answer.lower() == 'y':
+#                 book.id = generate_id()
+#                 book_list.append(book)
+#                 sort_book_list()  # sorts books to keep them in proper order.
+#                 break
+#
+#         else:
+#             book.id = generate_id()
+#             book_list.append(book)
+#             sort_book_list()  # sorts books to keep them in proper order.
+
+def add_book(new_book):
     ''' Add to db, set id value, return Book '''
     global book_list
-
-    for books in book_list:
-         print(book.read)
-         if books.author == book.author and book.read == 'yes':
-            print("you have already read this book")
-    else:
-        book.id = generate_id()
-        book_list.append(book)
-        sort_book_list() # sorts books to keep them in proper order.
-
+    add_book_anyway = True # Tells the program to add the book anyway
+    for book in book_list:
+        if new_book.title == book.title: # Checks if book has already been read
+            user_choice = input("You have already read this book. Would you like to read it again? ")
+            if user_choice.lower() == 'y':
+                new_book.id = generate_id()
+                book_list.append(new_book)
+                sort_book_list() # sorts books to keep them in proper order.
+                add_book_anyway = False
+                break
+            else:
+                print("You chose not to add the book.")
+                add_book_anyway = False
+                break
+    if add_book_anyway: # Just add the book if no duplicate found
+        new_book.id = generate_id()
+        book_list.append(new_book)
+        sort_book_list() # sorts books to keep them in proper order.        
 
 def delete_book(author_name):
     """Find the book by the title so that we can be able to delete the book from the wishlist"""
@@ -68,7 +100,7 @@ def delete_book(author_name):
         print("{} is not in our database".format(author_name))
 
 
-def find_book_by_title(book_title):
+def find_book_by_author(book_title):
     """Search for the title in the booklist, if author is found, return the author. Otherwise, return None"""
     global book_list
     for i in range(len(book_list)):
@@ -176,3 +208,7 @@ def sort_book_list(): # Sorts book_list alphabetically
 def set_counter(new_counter): # Sets the counter
     global counter
     counter = new_counter
+
+def get_counter(): # Gets the current value of counter
+    global counter
+    return counter

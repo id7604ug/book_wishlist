@@ -105,7 +105,9 @@ def new_book():
     '''Get info from user, add new book'''
     new_book = ui.get_new_book_info()
     datastore.add_book(new_book)
-    ui.message('Book added: ' + str(new_book))
+    if new_book.id != -1:
+        ui.message('Book added: ' + str(new_book))
+
 
 
 def quit():

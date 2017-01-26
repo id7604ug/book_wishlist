@@ -51,7 +51,6 @@ def shutdown():
     '''Save all data to a file - one for books, one for the current counter value, for persistent storage'''
 
     output_data = datastore.make_output_data()
-    print(json.dumps(output_data))
     # Create data directory
     try:
         os.mkdir(DATA_DIR)
@@ -62,4 +61,4 @@ def shutdown():
         json.dump(output_data, f)
 
     with open(COUNTER_FILE_NAME, 'w') as f:
-        f.write(str(counter))
+        f.write(str(datastore.get_counter()))
