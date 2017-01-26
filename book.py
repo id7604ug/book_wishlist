@@ -6,7 +6,7 @@ class Book:
 
     NO_ID = -1
 
-    def __init__(self, title, author,read=False, dateRead="not read", id=NO_ID):
+    def __init__(self, title, author, read=False, dateRead="not read", id=NO_ID):
         '''Default book is unread, and has no ID'''
         self.title = title
         self.author = author

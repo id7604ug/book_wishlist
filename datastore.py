@@ -2,12 +2,9 @@
 import os
 from book import Book
 import time
+import input_output
 
 import operator
-
-DATA_DIR = 'data'
-BOOKS_FILE_NAME = os.path.join(DATA_DIR, 'wishlist.txt')
-COUNTER_FILE_NAME = os.path.join(DATA_DIR, 'counter.txt')
 
 separator = '^^^'  # a string probably not in any valid data relating to a book
 
@@ -64,11 +61,12 @@ def delete_book(author_name):
         print("{} is not in our database".format(author_name))
 
 
-def find_book_by_author(author_name):
+def find_book_by_author(book_title):
     """Search for the author in the booklist, if author is found, return the author. Otherwise, return None"""
     global book_list
     for i in range(len(book_list)):
-        if author_name.lower() == str(book_list[i].author).lower():
+        if book_title.lower() == str(book_list[i].title).lower():
+            input_output.delete_file_data(str(book_list[i].title))
             author_exist = book_list[i]
             return author_exist
     else:
@@ -131,11 +129,14 @@ def make_book_list(string_from_file):
     global book_list
 
     books_str = string_from_file.split('\n')
-
+    # print(books_str) # Debugging
     for book_str in books_str:
-        data = book_str.split(separator)
-        book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]))
-        book_list.append(book)
+        if (len(book_str) >=  5):
+            # print(book_str) # Debugging
+            data = book_str.split(separator)
+            # print(data) # Debugging
+            book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]))
+            book_list.append(book)
 
 
 def make_output_data():

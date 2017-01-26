@@ -17,7 +17,8 @@ def delete_file_data(data_to_delete):
     with open(BOOKS_FILE_NAME, 'w') as book_data:
         for line in lines:
             if line.replace("^^^", " ") != data_to_delete:
-
+                pass
+            else:
                 book_data.write(line)
 
 
