@@ -3,10 +3,11 @@ import os
 from book import Book
 import time
 import input_output
+import json
 
 import operator
 
-separator = '^^^'  # a string probably not in any valid data relating to a book
+separator = '\n'  # a string probably not in any valid data relating to a book
 
 book_list = []
 counter = 0
@@ -42,16 +43,22 @@ def get_books(**kwargs):
 def add_book(book):
     ''' Add to db, set id value, return Book '''
     global book_list
-    book.id = generate_id()
-    book_list.append(book)
-    sort_book_list() # sorts books to keep them in proper order.
+
+    for books in book_list:
+         print(book.read)
+         if books.author == book.author and book.read == 'yes':
+            print("you have already read this book")
+    else:
+        book.id = generate_id()
+        book_list.append(book)
+        sort_book_list() # sorts books to keep them in proper order.
 
 
 def delete_book(author_name):
-    """Find the book by the author name so that we can be able to delete the book from the wishlist"""
+    """Find the book by the title so that we can be able to delete the book from the wishlist"""
 
     global book_list
-    book_exist = find_book_by_author(author_name)
+    book_exist = find_book_by_title(author_name)
     if book_exist is not None:
         book_index = book_list.index(book_exist)
         book_deleted = book_list.pop(book_index)
@@ -61,8 +68,8 @@ def delete_book(author_name):
         print("{} is not in our database".format(author_name))
 
 
-def find_book_by_author(book_title):
-    """Search for the author in the booklist, if author is found, return the author. Otherwise, return None"""
+def find_book_by_title(book_title):
+    """Search for the title in the booklist, if author is found, return the author. Otherwise, return None"""
     global book_list
     for i in range(len(book_list)):
         if book_title.lower() == str(book_list[i].title).lower():
@@ -123,21 +130,23 @@ def set_read(book_id, read, rating=0):
     return False # return False if book id is not found
 
 
-def make_book_list(string_from_file):
+def make_book_list(json_data):
 
     ''' turn the string from the file into a list of Book objects'''
 
     global book_list
+    book_dictionaries = json_data
+    book_data = []
+    for book in book_dictionaries:
+        single_book = []
+        for value in book.values():
+            single_book.append(value)
+        book_data.append(single_book)
 
-    books_str = string_from_file.split('\n')
-    # print(books_str) # Debugging
-    for book_str in books_str:
-        if (len(book_str) >=  5):
-            # print(book_str) # Debugging
-            data = book_str.split(separator)
-            # print(data) # Debugging
-            book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]), int(data[5]))
-            book_list.append(book)
+    for data in book_data:
+        # print(data) # Debugging
+        book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]), int(data[5]))
+        book_list.append(book)
 
 
 def make_output_data():
@@ -148,13 +157,12 @@ def make_output_data():
     output_data = []
 
     for book in book_list:
-        output = [ book.title, book.author,str(book.read), str(book.dateRead), str(book.id), str(book.rating) ]
-        output_str = separator.join(output)
-        output_data.append(output_str)
+        output = book.get_dictionary_formatted()
+        output_data.append(output)
 
-    all_books_string = '\n'.join(output_data)
+    # all_books_string = '\n'.join(output_data)
 
-    return all_books_string
+    return output_data
 
 
 def sort_book_list(): # Sorts book_list alphabetically

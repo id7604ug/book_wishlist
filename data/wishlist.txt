@@ -1,14 +1,1 @@
-Atlas Shrugged^^^Ayn Rand^^^True^^^01/25/17^^^2^^^0
-Atlas Shruggedd^^^Charles Dickens^^^True^^^01/25/17^^^1^^^2
-Atlas Shruggedd^^^cormic mccarthy^^^True^^^01/21/17^^^3^^^0
-Book^^^Author^^^False^^^not read^^^1^^^0
-Book2^^^Author2^^^False^^^not read^^^1^^^0
-Book3^^^Author3^^^True^^^01/25/17^^^5^^^4
-David Copperfield^^^Charles Dickens^^^True^^^01/21/17^^^1^^^0
-Grimms Fairytales^^^The Brothers Grimm^^^True^^^01/25/17^^^5^^^0
-Grimms Fairytales^^^The Brothers Grimm^^^False^^^not read^^^6^^^0
-Hunger Games^^^Suzanne Collins^^^False^^^not read^^^1^^^0
-To Have and Have Not^^^Shakespere^^^False^^^not read^^^1^^^0
-the hobbit^^^JRR tolkien^^^False^^^not read^^^7^^^0
-the hobbit^^^JRR tolkien^^^True^^^01/25/17^^^4^^^2
-the road^^^cormic mccarthy^^^True^^^01/21/17^^^8^^^0
+[{"Title": "Gardens of the Moon", "Author": "Steven Erikson", "Read": "False", "Date Read": "not read", "ID": "1", "Rating": "0"}, {"Title": "The Golden Compass", "Author": "Phillip Pullman", "Read": "False", "Date Read": "not read", "ID": "2", "Rating": "0"}, {"Title": "The Road", "Author": "Cormic McCarthy", "Read": "False", "Date Read": "not read", "ID": "1", "Rating": "0"}]
