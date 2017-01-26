@@ -14,7 +14,7 @@ This is a program that allows you to enter, search and manage a database of book
   
 # Program Examples:
 
-Main menu:
+Main menu: 
 
         1. Show unread books (wishlist)
         2. Show books that have been read
@@ -22,9 +22,11 @@ Main menu:
         4. Add book to wishlist
         5. Search database for book
         6. Delete book by author name:
+        7. Edit book title by author
+        8. Edit book author by title
         q. Quit
     
-        Enter your selection: 
+    Enter your selection: 
 
 Unread books search result:
 
@@ -35,8 +37,14 @@ Unread books search result:
  
 Search whole database for book title:
  
-        Do you wish to search by title or author? title
-        Please enter the FULL title of the book you want to search for: The Grapes of Wrath
+    Do you wish to search by title or author? title
+    Please enter the FULL title of the book you want to search for: The Grapes of Wrath
+        
+Edit Author of book by title:
+
+    Please enter the title of the book: David Copperfield
+    Please enter the new author of the book: Ann Rice
+
 
 # Setup
 
