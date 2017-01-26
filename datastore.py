@@ -84,7 +84,7 @@ def edit_author(book_title, new_author): # Method to edit the author of the book
         if book_exists:
             book_list[i].set_author(new_author)
             book_exists = False
-        elif i == (len(book_list) - 1) & book_found:
+        elif i == (len(book_list) - 1) & book_not_found:
             print("This author does not exist in your collection.")
 
 def edit_title(book_author, new_title): # Method to edit the book title
@@ -98,7 +98,7 @@ def edit_title(book_author, new_title): # Method to edit the book title
         if author_exists:
             book_list[i].set_title(new_title)
             author_exists = False
-        elif i == (len(book_list) - 1) & author_found:
+        elif i == (len(book_list) - 1) & author_not_found:
             print("This book does not exist in your collection.")
 
 def generate_id():
