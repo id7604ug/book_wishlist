@@ -67,6 +67,7 @@ def get_books(**kwargs):
 def add_book(new_book):
     ''' Add to db, set id value, return Book '''
     global book_list
+    add_book_anyway = True # Tells the program to add the book anyway
     for book in book_list:
         if new_book.title == book.title: # Checks if book has already been read
             user_choice = input("You have already read this book. Would you like to read it again? ")
@@ -74,15 +75,16 @@ def add_book(new_book):
                 new_book.id = generate_id()
                 book_list.append(new_book)
                 sort_book_list() # sorts books to keep them in proper order.
+                add_book_anyway = False
                 break
             else:
-                print("You chose to not add the book.")
+                print("You chose not to add the book.")
+                add_book_anyway = False
                 break
-        else: # Just add the book if no duplicate found
-            new_book.id = generate_id()
-            book_list.append(new_book)
-            sort_book_list() # sorts books to keep them in proper order.
-            break
+    if add_book_anyway: # Just add the book if no duplicate found
+        new_book.id = generate_id()
+        book_list.append(new_book)
+        sort_book_list() # sorts books to keep them in proper order.        
 
 def delete_book(author_name):
     """Find the book by the title so that we can be able to delete the book from the wishlist"""
